@@ -272,14 +272,7 @@ minetest.register_tool("italian_food:rolling_pin", {
     },
     groups = {wooden_tool = 1},
 })
-minetest.register_craft({
-    output = "italian_food:rolling_pin",
-    recipe = {
-        {"", "mcl_core:stick", ""},
-        {"", "mcl_core:stick", ""},
-        {"", "mcl_core:stick", ""},
-    },
-})
+
 
 -- cheese rack
 local CHEESE_TIME = 30  -- secondi per produrre il formaggio
@@ -370,7 +363,20 @@ minetest.register_node("italian_food:cheese_rack", {
 
 
 -- potion idea
-
+mcl_potions.register_potion({
+   name = "sugar_coffe",
+   _id_override = "italian_food:sugar_coffe", -- only change
+   desc_suffix = S("of Sugar Coffe"),
+   _tt = nil,
+   _longdesc = S("Increases walking, placing and digging speed and jump boost."),
+   color = "#531B00",
+   _effect_list = {
+      swiftness = {},
+        haste = {},
+        leaping = {},
+   },
+   has_arrow = false,
+})
 
 
 
