@@ -161,3 +161,13 @@ minetest.register_craft({
         {"", "mcl_throwing:egg", ""},
     },
 })
+
+-- non-food items
+minetest.register_craft({
+    output = "italian_food:rolling_pin",
+    recipe = {
+        {"", "mcl_core:stick", ""},
+        {"", "mcl_core:stick", ""},
+        {"", "mcl_core:stick", ""},
+    },
+})
