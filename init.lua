@@ -84,7 +84,7 @@ minetest.register_craftitem("italian_food:basil_seeds", {
     groups = {craftitem = 1, compostability = 30},
     inventory_image = "basil_seeds.png",
     on_place = function(itemstack, placer, pointed_thing)
-        return mcl_farming:place_seed(itemstack, placer, pointed_thing, "italian_food:basil_1")
+        return mcl_farming:place_seed(itemstack, placer, pointed_thing, "italian_food:basil_plant_1")
     end,
 })
 
@@ -107,7 +107,7 @@ for stage = 1, 4 do
         S("Premature tomato plants grow on farmland under sunlight through 4 stages.") .. "\n" ..
         S("They grow faster on hydrated farmland. They can be harvested at any time but yield profit only when mature.") or nil
 
-    minetest.register_node("italian_food:basil_" .. stage, {
+    minetest.register_node("italian_food:basil_plant_" .. stage, {
         description = S("Premature Basil Plant (Stage @1)", stage),
         _doc_items_create_entry = create_doc_entry,
         _doc_items_entry_name = doc_name,
@@ -195,10 +195,10 @@ mcl_farming:add_plant(
     "plant_basil",
     "italian_food:basil_plant",
     {
-        "italian_food:basil_1",
-        "italian_food:basil_2",
-        "italian_food:basil_3",
-        "italian_food:basil_4"
+        "italian_food:basil_plant_1",
+        "italian_food:basil_plant_2",
+        "italian_food:basil_plant_3",
+        "italian_food:basil_plant_4"
     },
     5.8020,
     35
@@ -214,7 +214,7 @@ minetest.register_craftitem("italian_food:tomato_seeds", {
     groups = {craftitem = 1, compostability = 30},
     inventory_image = "tomato_seeds.png",
     on_place = function(itemstack, placer, pointed_thing)
-        return mcl_farming:place_seed(itemstack, placer, pointed_thing, "italian_food:tomato_1")
+        return mcl_farming:place_seed(itemstack, placer, pointed_thing, "italian_food:tomato_plant_1")
     end,
 })
 
@@ -237,7 +237,7 @@ for stage = 1, 5 do
         S("Premature tomato plants grow on farmland under sunlight through 5 stages.") .. "\n" ..
         S("They grow faster on hydrated farmland. They can be harvested at any time but yield profit only when mature.") or nil
 
-    minetest.register_node("italian_food:tomato_" .. stage, {
+    minetest.register_node("italian_food:tomato_plant_" .. stage, {
         description = S("Premature Tomato Plant (Stage @1)", stage),
         _doc_items_create_entry = create_doc_entry,
         _doc_items_entry_name = doc_name,
@@ -325,10 +325,10 @@ mcl_farming:add_plant(
     "plant_tomato",
     "italian_food:tomato_plant",
     {
-        "italian_food:tomato_1",
-        "italian_food:tomato_2",
-        "italian_food:tomato_3",
-        "italian_food:tomato_4"
+        "italian_food:tomato_plant_1",
+        "italian_food:tomato_plant_2",
+        "italian_food:tomato_plant_3",
+        "italian_food:tomato_plant_4"
     },
     5.8020,
     35
