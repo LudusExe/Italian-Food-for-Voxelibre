@@ -36,32 +36,32 @@ local function register_food_item(name, description, image, saturation, eat_valu
     })
 end
 
-register_food_item("italian_food:pizza", S("Pizza"), "pizza.png", 16, 15)
-register_food_item("italian_food:mushroom_pizza", S("Mushroom Pizza"), "mushroom_pizza.png", 16, 18)
-register_food_item("italian_food:lasagna", S("Lasagna"), "lasagna.png", 13, 10)
-register_food_item("italian_food:spaghetti", S("Tomato Spaghetti"), "spaghetti.png", 12, 10)
-register_food_item("italian_food:dough", S("Dough"), "dough.png", 10, 10)
-register_food_item("italian_food:spaghetti_raw", S("Raw Spaghetti"), "spaghetti_raw.png", 10, 10)
-register_food_item("italian_food:raviolo_raw", S("Raw Raviolo"), "raviolo.png", 12, 12)
-register_food_item("italian_food:gnocco_raw", S("Raw Gnocco"), "gnocco.png", 11, 10)
-register_food_item("italian_food:fazzoletto_raw", S("Raw Fazzoletto"), "fazzoletti.png", 11, 11)
-register_food_item("italian_food:bruschetta", S("Bruschetta"), "bruschetta.png", 20, 18)
-register_food_item("italian_food:canoli", S("Cannoli"), "canoli.png", 20, 18)
-register_food_item("italian_food:mozzarella", S("Mozzarella"), "mozzarella.png", 8.5, 9)
-register_food_item("italian_food:sheep_milk_bucket", S("Sheep Milk Bucket"), "sheep_milk_bucket.png", 8.5, 9)
-register_food_item("italian_food:sheep_cheese", S("Sheep Cheese"), "sheep_cheese.png", 9,8)
-register_food_item("italian_food:tomato", S("Tomato"), "tomato.png", 8.5, 9)
-register_food_item("italian_food:basil", S("Basil"), "basil.png", 3,4)
-register_food_item("italian_food:tomato_sauce", S("Tomato Sauce"), "tomato_sauce.png", 7.5,8)
-register_food_item("italian_food:pesto_sauce", S("Pesto Sauce"), "pesto_sauce.png", 7.5,8)
-register_food_item("italian_food:tiramisu", S("Tiramisu"), "tiramisu.png", 12, 8)
-register_food_item("italian_food:ice_cream", S("Chocolate Ice Cream"), "ice_cream.png", 8, 12)
-register_food_item("italian_food:cone", S("Ice Cream Cone"), "cone.png", 4, 6)
-register_food_item("italian_food:panettone", S("Panettone"), "panettone.png", 7, 8)
-register_food_item("italian_food:pandoro", S("Pandoro"), "pandoro.png", 7, 8)
-register_food_item("italian_food:coffee", S("Coffee"), "coffee.png", 7.5,8)
-register_food_item("italian_food:sunflowerolio",S("Sunflower Oil"), "sunfloweroil.png", 5, 3)    
-register_food_item("italian_food:pork_jowl",S("Pork Jowl"), "pork_jowl.png", 5, 3)
+register_food_item("italian_food:pizza", S("Pizza"), "italian_food_pizza.png", 16, 15)
+register_food_item("italian_food:mushroom_pizza", S("Mushroom Pizza"), "italian_food_mushroom_pizza.png", 16, 18)
+register_food_item("italian_food:lasagna", S("Lasagna"), "italian_food_lasagna.png", 13, 10)
+register_food_item("italian_food:spaghetti", S("Tomato Spaghetti"), "italian_food_spaghetti.png", 12, 10)
+register_food_item("italian_food:dough", S("Dough"), "italian_food_dough.png", 10, 10)
+register_food_item("italian_food:spaghetti_raw", S("Raw Spaghetti"), "italian_food_spaghetti_raw.png", 10, 10)
+register_food_item("italian_food:raviolo_raw", S("Raw Raviolo"), "italian_food_raviolo.png", 12, 12)
+register_food_item("italian_food:gnocco_raw", S("Raw Gnocco"), "italian_food_gnocco.png", 11, 10)
+register_food_item("italian_food:fazzoletto_raw", S("Raw Fazzoletto"), "italian_food_fazzoletti.png", 11, 11)
+register_food_item("italian_food:bruschetta", S("Bruschetta"), "italian_food_bruschetta.png", 20, 18)
+register_food_item("italian_food:canoli", S("Cannoli"), "italian_food_canoli.png", 20, 18)
+register_food_item("italian_food:mozzarella", S("Mozzarella"), "italian_food_mozzarella.png", 8.5, 9)
+register_food_item("italian_food:sheep_milk_bucket", S("Sheep Milk Bucket"), "italian_food_sheep_milk_bucket.png", 8.5, 9)
+register_food_item("italian_food:sheep_cheese", S("Sheep Cheese"), "italian_food_sheep_cheese.png", 9,8)
+register_food_item("italian_food:tomato", S("Tomato"), "italian_food_tomato.png", 8.5, 9)
+register_food_item("italian_food:basil", S("Basil"), "italian_food_basil.png", 3,4)
+register_food_item("italian_food:tomato_sauce", S("Tomato Sauce"), "italian_food_tomato_sauce.png", 7.5,8)
+register_food_item("italian_food:pesto_sauce", S("Pesto Sauce"), "italian_food_pesto_sauce.png", 7.5,8)
+register_food_item("italian_food:tiramisu", S("Tiramisu"), "italian_food_tiramisu.png", 12, 8)
+register_food_item("italian_food:ice_cream", S("Chocolate Ice Cream"), "italian_food_ice_cream.png", 8, 12)
+register_food_item("italian_food:cone", S("Ice Cream Cone"), "italian_food_cone.png", 4, 6)
+register_food_item("italian_food:panettone", S("Panettone"), "italian_food_panettone.png", 7, 8)
+register_food_item("italian_food:pandoro", S("Pandoro"), "italian_food_pandoro.png", 7, 8)
+register_food_item("italian_food:coffee", S("Coffee"), "italian_food_coffee.png", 7.5,8)
+register_food_item("italian_food:sunflowerolio",S("Sunflower Oil"), "italian_food_sunfloweroil.png", 5, 3)    
+register_food_item("italian_food:pork_jowl",S("Pork Jowl"), "italian_food_pork_jowl.png", 5, 3)
 
 -- plants
 local function on_bone_meal(itemstack,placer,pointed_thing,pos,node)
@@ -82,7 +82,7 @@ minetest.register_craftitem("italian_food:basil_seeds", {
     _doc_items_usagehelp = S("Place the tomato seeds on farmland (created with a hoe) to plant a tomato plant.") .. "\n" ..
                            S("They grow in sunlight and grow faster on hydrated farmland."),
     groups = {craftitem = 1, compostability = 30},
-    inventory_image = "basil_seeds.png",
+    inventory_image = "italian_food_basil_seeds.png",
     on_place = function(itemstack, placer, pointed_thing)
         return mcl_farming:place_seed(itemstack, placer, pointed_thing, "italian_food:basil_plant_1")
     end,
@@ -99,12 +99,12 @@ local sel_heights = {
     5/16,
 }
 
--- Register tomato plant growth stages (1 to 4)
-for stage = 1, 4 do
+-- Register basil plant growth stages (1 to 7)
+for stage = 1, 7 do
     local create_doc_entry = (stage == 1)
     local doc_name = create_doc_entry and S("Premature Basil Plant") or nil
     local doc_longdesc = create_doc_entry and
-        S("Premature tomato plants grow on farmland under sunlight through 4 stages.") .. "\n" ..
+        S("Premature basil plants grow on farmland under sunlight through 7 stages.") .. "\n" ..
         S("They grow faster on hydrated farmland. They can be harvested at any time but yield profit only when mature.") or nil
 
     minetest.register_node("italian_food:basil_plant_" .. stage, {
@@ -119,9 +119,9 @@ for stage = 1, 4 do
         walkable = false,
         drawtype = "plantlike",
         drop = "italian_food:basil_seeds",
-        tiles = {"basil_stage_" .. (stage - 1) .. ".png"},
-        inventory_image = "basil_stage_" .. (stage - 1) .. ".png",
-        wield_image = "basil_stage_" .. (stage - 1) .. ".png",
+        tiles = {"italian_food_basil_stage_" .. (stage - 1) .. ".png"},
+        inventory_image = "italian_food_basil_stage_" .. (stage - 1) .. ".png",
+        wield_image = "italian_food_basil_stage_" .. (stage - 1) .. ".png",
         selection_box = {
             type = "fixed",
             fixed = { {-0.5, -0.5, -0.5, 0.5, sel_heights[stage], 0.5} },
@@ -146,7 +146,7 @@ for stage = 1, 4 do
     })
 end
 
--- Register mature tomato plant node
+-- Register mature basil plant node
 minetest.register_node("italian_food:basil_plant", {
     description = S("Mature Basil Plant"),
     _doc_items_longdesc = S("Mature basil plants are ready to be harvested for basil and basil seeds.") .. "\n" ..
@@ -157,16 +157,16 @@ minetest.register_node("italian_food:basil_plant", {
     place_param2 = 3,
     walkable = false,
     drawtype = "plantlike",
-    tiles = {"basil_plant_mature.png"},
-    inventory_image = "basil_plant_mature.png",
-    wield_image = "basil_plant_mature.png",
+    tiles = {"italian_food_basil_plant_mature.png"},
+    inventory_image = "italian_food_basil_plant_mature.png",
+    wield_image = "italian_food_basil_plant_mature.png",
     drop = {
         max_items = 4,
         items = {
-            { items = {"italian_food:basil_seeds"} },
-            { items = {"italian_food:basil_seeds"}, rarity = 2 },
             { items = {"italian_food:basil"}, rarity = 1 },
-            { items = {"italian_food:basil"} },
+            { items = {"italian_food:basil 4"}, rarity = 3 },
+            { items = {"italian_food:basil_seeds"}, rarity = 1 },
+            { items = {"italian_food:basil_seeds 3"}, rarity = 4 },
         }
     },
     groups = {
@@ -198,7 +198,10 @@ mcl_farming:add_plant(
         "italian_food:basil_plant_1",
         "italian_food:basil_plant_2",
         "italian_food:basil_plant_3",
-        "italian_food:basil_plant_4"
+        "italian_food:basil_plant_4",
+        "italian_food:basil_plant_5",
+        "italian_food:basil_plant_6",
+        "italian_food:basil_plant_7",
     },
     5.8020,
     35
@@ -212,7 +215,7 @@ minetest.register_craftitem("italian_food:tomato_plant_seeds", {
     _doc_items_usagehelp = S("Place the tomato seeds on farmland (created with a hoe) to plant a tomato plant.") .. "\n" ..
                            S("They grow in sunlight and grow faster on hydrated farmland. Right-click an animal to feed it tomato seeds."),
     groups = {craftitem = 1, compostability = 30},
-    inventory_image = "tomato_plant_seeds.png",
+    inventory_image = "italian_food_tomato_plant_seeds.png",
     on_place = function(itemstack, placer, pointed_thing)
         return mcl_farming:place_seed(itemstack, placer, pointed_thing, "italian_food:tomato_plant_1")
     end,
@@ -230,11 +233,11 @@ local sel_heights = {
 }
 
 -- Register tomato plant growth stages (1 to 5)
-for stage = 1, 5 do
+for stage = 1, 7 do
     local create_doc_entry = (stage == 1)
     local doc_name = create_doc_entry and S("Premature Tomato Plant") or nil
     local doc_longdesc = create_doc_entry and
-        S("Premature tomato plants grow on farmland under sunlight through 5 stages.") .. "\n" ..
+        S("Premature tomato plants grow on farmland under sunlight through 7 stages.") .. "\n" ..
         S("They grow faster on hydrated farmland. They can be harvested at any time but yield profit only when mature.") or nil
 
     minetest.register_node("italian_food:tomato_plant_" .. stage, {
@@ -249,9 +252,9 @@ for stage = 1, 5 do
         walkable = false,
         drawtype = "plantlike",
         drop = "italian_food:tomato_plant_seeds",
-        tiles = {"tomato_stage_" .. (stage - 1) .. ".png"},
-        inventory_image = "tomato_stage_" .. (stage - 1) .. ".png",
-        wield_image = "tomato_stage_" .. (stage - 1) .. ".png",
+        tiles = {"italian_food_tomato_stage_" .. (stage - 1) .. ".png"},
+        inventory_image = "italian_food_tomato_stage_" .. (stage - 1) .. ".png",
+        wield_image = "italian_food_tomato_stage_" .. (stage - 1) .. ".png",
         selection_box = {
             type = "fixed",
             fixed = { {-0.5, -0.5, -0.5, 0.5, sel_heights[stage], 0.5} },
@@ -287,16 +290,16 @@ minetest.register_node("italian_food:tomato_plant", {
     place_param2 = 3,
     walkable = false,
     drawtype = "plantlike",
-    tiles = {"tomato_plant_mature.png"},
-    inventory_image = "tomato_plant_mature.png",
-    wield_image = "tomato_plant_mature.png",
+    tiles = {"italian_food_tomato_plant_mature.png"},
+    inventory_image = "italian_food_tomato_plant_mature.png",
+    wield_image = "italian_food_tomato_plant_mature.png",
     drop = {
         max_items = 4,
         items = {
-            { items = {"italian_food:tomato_plant_seeds"} },
-            { items = {"italian_food:tomato_plant_seeds"}, rarity = 2 },
             { items = {"italian_food:tomato"}, rarity = 1 },
-            { items = {"italian_food:tomato"} },
+            { items = {"italian_food:tomato 2"}, rarity = 3 },
+            { items = {"italian_food:tomato_plant_seeds 2"}, rarity = 1 },
+            { items = {"italian_food:tomato_plant_seeds 4"}, rarity = 3 },
         }
     },
     groups = {
@@ -328,7 +331,10 @@ mcl_farming:add_plant(
         "italian_food:tomato_plant_1",
         "italian_food:tomato_plant_2",
         "italian_food:tomato_plant_3",
-        "italian_food:tomato_plant_4"
+        "italian_food:tomato_plant_4",
+        "italian_food:tomato_plant_5",
+        "italian_food:tomato_plant_6",
+        "italian_food:tomato_plant_7",
     },
     5.8020,
     35
@@ -338,7 +344,7 @@ mcl_farming:add_plant(
 --achievements
 awards.register_achievement("italian_food:pizza_eating", {
 	title = S("Welcome to Italy!"),
-	icon = "pizza.png",
+	icon = "italian_food_pizza.png",
 	description = S("Eat a pizza slice."),
 	trigger = {
 		type = "eat",
@@ -348,7 +354,7 @@ awards.register_achievement("italian_food:pizza_eating", {
 })
 awards.register_achievement("italian_food:mushroom_pizza_eating", {
 	title = S("Mushrooms? Don't tell Mario!"),
-	icon = "mushroom_pizza.png",
+	icon = "italian_food_mushroom_pizza.png",
 	description = S("Eat a pizza slice with mushrooms."),
 	trigger = {
 		type = "eat",
@@ -358,7 +364,7 @@ awards.register_achievement("italian_food:mushroom_pizza_eating", {
 })
 awards.register_achievement("italian_food:bruschetta_eating", {
 	title = S("A simple snack!"),
-	icon = "bruschetta.png",
+	icon = "italian_food_bruschetta.png",
 	description = S("Eat a Bruschetta."),
 	trigger = {
 		type = "eat",
@@ -370,7 +376,7 @@ awards.register_achievement("italian_food:bruschetta_eating", {
 -- items that aren't food
 minetest.register_tool("italian_food:rolling_pin", {
     description = S("Rolling Pin"),
-    inventory_image = "rolling_pin.png",
+    inventory_image = "italian_food_rolling_pin.png",
     tool_capabilities = {
         full_punch_interval = 1.2,
         max_drop_level = 0,
@@ -389,9 +395,9 @@ local CHEESE_TIME = 30  -- secondi per produrre il formaggio
 minetest.register_node("italian_food:cheese_rack", {
     description = S("Cheese Rack"),
     tiles = {
-        "cheese_rack_top.png", "cheese_rack_top.png",
-        "cheese_rack_side.png", "cheese_rack_side.png",
-        "cheese_rack_side.png", "cheese_rack_front.png"
+        "italian_food_cheese_rack_top.png", "italian_food_cheese_rack_top.png",
+        "italian_food_cheese_rack_side.png", "italian_food_cheese_rack_side.png",
+        "italian_food_cheese_rack_side.png", "italian_food_cheese_rack_front.png"
     },
     groups = {choppy = 2, oddly_breakable_by_hand = 2},
     sounds = mcl_sounds.node_sound_wood_defaults(),
@@ -469,8 +475,6 @@ minetest.register_node("italian_food:cheese_rack", {
     end,
 })
 
-
-
 -- potion idea
 mcl_potions.register_potion({
    name = "sugar_coffe",
@@ -486,6 +490,8 @@ mcl_potions.register_potion({
    },
    has_arrow = false,
 })
+
+
 
 
 
@@ -526,4 +532,3 @@ mcl_potions.register_potion({
 
 
 -- Hey doesn't tiramisu also use coffee and eggs? >;p         Inspired by a real dessert and a caffeine-fueled coding session!
-
