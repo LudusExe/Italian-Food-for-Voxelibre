@@ -15,7 +15,7 @@ mcl_structures.register_structure("pizzeria",{
 	sidelen = 16,
 	y_offset = 0,
 	filenames = {
-		modpath.."/schematics/pizzeria.mts",
+		modpath.."/schematics/italian_food_pizzeria.mts",
 	},
 	loot = {
 		["mcl_barrels:barrel_closed" ] ={{
@@ -28,7 +28,7 @@ mcl_structures.register_structure("pizzeria",{
 				{ itemstring = "italian_food:pork_jowl", weight = 16, amount_min = 3, amount_max=7 },
 				{ itemstring = "italian_food:sheep_milk_bucket", weight = 3, amount_min = 2, amount_max = 7 },
 				{ itemstring = "mcl_core:iron_ingot", weight = 5, amount_min = 1, amount_max = 5 },
-				{ itemstring = "mcl_core:diamond", weight = 1, amount_min = 1, amount_max = 3 },                      -- maybe more food is gonna be added 
+				{ itemstring = "mcl_core:diamond", weight = 1, amount_min = 1, amount_max = 3 },
 				{ itemstring = "mcl_tools:axe_stone", weight = 15, },
 				{ itemstring = "mcl_tools:sword_stone", weight = 15, },
 				{ itemstring = "italian_food:rolling_pin", weight = 15, },
