@@ -1,22 +1,20 @@
-Italian Food mod;
-A Voxelibre/Mineclone 2 mod that adds classic italian dishes and ingredients.
-Craft pizza, spaghetti, tiramisu, and more—using custom recipes and ingredients like tomato, basil, and mozzarella.
+This mod adds a variety of traditional Italian foods, ingredients, and cooking tools. Grow fresh basil and tomatoes, craft delicious meals, and enjoy new gameplay mechanics like cheese fermentation and potion effects.
 
 Features:
-20+ food items (pizza, bruschetta, cannoli, etc.)
+*  Foods: Pizza, lasagna, spaghetti, bruschetta, cannoli, tiramisu, and more
 
-Basic farming: basil and tomato plants spawn on grass
+* Ingredients: Basil, tomatoes, mozzarella, sheep cheese, sauces, dough
 
-Custom crafting and cooking recipes
+*  Farming: Multi-stage tomato and basil plants
 
-Examples:
+* Crafting: Use real recipes to prepare complex dishes
 
-Pizza = Dough + Tomato Sauce + Mozzarella
-Spaghetti = Raw Spaghetti + Tomato Sauce
-Bruschetta = Bread + Tomato
-Tiramisu = Cocoa + Milk + Sugar
+* Tools: Rolling pin
 
-Dependencies
-Requires:
+* Potions: Coffee-based potion with speed, jump, and dig boosts
 
-mcl_farming, mcl_flowers, mcl_cocoas, mcl_core, mcl_mobitems, mcl_potions, mcl_throwing, mcl_mushrooms, mcl_sounds
+* Achievements: Earn rewards for eating Italian specialties
+
+* Structures: Pizzeria structure with loot
+
+Perfect for survival players who love farming, cooking, or adding cultural flavor to their game.
