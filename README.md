@@ -1,4 +1,4 @@
-This mod adds a variety of traditional Italian foods, ingredients, and cooking tools. Grow fresh basil and tomatoes, craft delicious meals, and enjoy new gameplay mechanics like cheese fermentation and potion effects.
+This mod adds a variety of traditional Italian foods, ingredients, and cooking tools. Grow fresh basil and tomatoes, craft delicious meals, and enjoy new gameplay mechanics like potion effects.
 
 Features:
 *  Foods: Pizza, lasagna, spaghetti, bruschetta, cannoli, tiramisu, and more
