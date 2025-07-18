@@ -205,14 +205,14 @@ mcl_farming:add_plant(
 )
 
 -- Register Tomato Seeds craftitem
-minetest.register_craftitem("italian_food:tomato_seeds", {
+minetest.register_craftitem("italian_food:tomato_plant_seeds", {
     description = S("Tomato Seeds"),
     _tt_help = S("Grows on farmland"),
     _doc_items_longdesc = S("Grows into a tomato plant."),
     _doc_items_usagehelp = S("Place the tomato seeds on farmland (created with a hoe) to plant a tomato plant.") .. "\n" ..
                            S("They grow in sunlight and grow faster on hydrated farmland. Right-click an animal to feed it tomato seeds."),
     groups = {craftitem = 1, compostability = 30},
-    inventory_image = "tomato_seeds.png",
+    inventory_image = "tomato_plant_seeds.png",
     on_place = function(itemstack, placer, pointed_thing)
         return mcl_farming:place_seed(itemstack, placer, pointed_thing, "italian_food:tomato_plant_1")
     end,
@@ -248,7 +248,7 @@ for stage = 1, 5 do
         sunlight_propagates = true,
         walkable = false,
         drawtype = "plantlike",
-        drop = "italian_food:tomato_seeds",
+        drop = "italian_food:tomato_plant_seeds",
         tiles = {"tomato_stage_" .. (stage - 1) .. ".png"},
         inventory_image = "tomato_stage_" .. (stage - 1) .. ".png",
         wield_image = "tomato_stage_" .. (stage - 1) .. ".png",
@@ -293,8 +293,8 @@ minetest.register_node("italian_food:tomato_plant", {
     drop = {
         max_items = 4,
         items = {
-            { items = {"italian_food:tomato_seeds"} },
-            { items = {"italian_food:tomato_seeds"}, rarity = 2 },
+            { items = {"italian_food:tomato_plant_seeds"} },
+            { items = {"italian_food:tomato_plant_seeds"}, rarity = 2 },
             { items = {"italian_food:tomato"}, rarity = 1 },
             { items = {"italian_food:tomato"} },
         }
@@ -312,7 +312,7 @@ minetest.register_node("italian_food:tomato_plant", {
     _mcl_blast_resistance = 0,
     _mcl_fortune_drop = {
         discrete_uniform_distribution = true,
-        items = {"italian_food:tomato_seeds"},
+        items = {"italian_food:tomato_plant_seeds"},
         drop_without_fortune = {"italian_food:tomato"},
         min_count = 1,
         max_count = 6,
