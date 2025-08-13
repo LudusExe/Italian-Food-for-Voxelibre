@@ -23,7 +23,6 @@ function potionmod.apply_effect(player, effect_name, duration, strength)
     end
 end
 
-
 local function register_food_item(name, description, image, saturation, eat_value)
     minetest.register_craftitem(name, {
         description = description,
@@ -51,7 +50,9 @@ register_food_item("italian_food:mozzarella", S("Mozzarella"), "italian_food_moz
 register_food_item("italian_food:sheep_milk_bucket", S("Sheep Milk Bucket"), "italian_food_sheep_milk_bucket.png", 8.5, 9)
 register_food_item("italian_food:sheep_cheese", S("Sheep Cheese"), "italian_food_sheep_cheese.png", 9,8)
 register_food_item("italian_food:tomato", S("Tomato"), "italian_food_tomato.png", 8.5, 9)
+register_food_item("italian_food:diamond_tomato", S("Diamond Tomato"), "italian_food_diamond_tomato.png", 75, 75) -- I know this is OP, but when in survival you have 8 blocks of diamond?
 register_food_item("italian_food:basil", S("Basil"), "italian_food_basil.png", 3,4)
+register_food_item("italian_food:diamond_basil", S("Diamond Basil"), "italian_food_diamond_basil.png", 50, 50) -- like the diamond tomato up there
 register_food_item("italian_food:tomato_sauce", S("Tomato Sauce"), "italian_food_tomato_sauce.png", 7.5,8)
 register_food_item("italian_food:pesto_sauce", S("Pesto Sauce"), "italian_food_pesto_sauce.png", 7.5,8)
 register_food_item("italian_food:tiramisu", S("Tiramisu"), "italian_food_tiramisu.png", 12, 8)
@@ -91,12 +92,12 @@ minetest.register_craftitem("italian_food:basil_seeds", {
 -- Selection box heights for each growth stage
 local sel_heights = {
     -5/16,
-    -2/16,
-    0,
-    3/16,
-    5/16,
-    5/16,
-    5/16,
+    -5/16,
+    -5/16,
+    -5/16,
+    -5/16,
+    -5/16,
+    -5/16,
 }
 
 -- Register basil plant growth stages (1 to 7)
@@ -224,12 +225,12 @@ minetest.register_craftitem("italian_food:tomato_plant_seeds", {
 -- Selection box heights for each growth stage
 local sel_heights = {
     -5/16,
-    -2/16,
-    0,
-    3/16,
-    5/16,
-    6/16,
-    7/16,
+    -5/16,
+    -5/16,
+    -5/16,
+    -5/16,
+    -5/16,
+    -5/16,
 }
 
 -- Register tomato plant growth stages (1 to 5)
@@ -340,7 +341,6 @@ mcl_farming:add_plant(
     35
 )
 
-
 --achievements
 awards.register_achievement("italian_food:pizza_eating", {
 	title = S("Welcome to Italy!"),
@@ -350,6 +350,16 @@ awards.register_achievement("italian_food:pizza_eating", {
 		type = "eat",
 		item= "italian_food:pizza",
 		target = 1,
+	}
+})
+awards.register_achievement("italian_food:pizza_eating_100", {
+	title = S("Are you a turtle from New York?"),
+	icon = "italian_food_pizza.png",
+	description = S("Eat 100 pizza slices."),
+	trigger = {
+		type = "eat",
+		item= "italian_food:pizza",
+		target = 100,
 	}
 })
 awards.register_achievement("italian_food:mushroom_pizza_eating", {
@@ -372,6 +382,16 @@ awards.register_achievement("italian_food:bruschetta_eating", {
 		target = 1,
 	}
 })
+awards.register_achievement("italian_food:lasagna_eating", {
+	title = S("Approved by a Famous Cat!"),
+	icon = "italian_food_lasagna.png",
+	description = S("Eat 100 Lasagna."),
+	trigger = {
+		type = "eat",
+		item = "italian_food:lasagna",
+		target = 100,
+	}
+})
 
 -- items that aren't food
 minetest.register_tool("italian_food:rolling_pin", {
@@ -386,6 +406,32 @@ minetest.register_tool("italian_food:rolling_pin", {
         damage_groups = {fleshy = 1},
     },
     groups = {wooden_tool = 1},
+})
+minetest.register_tool("italian_food:iron_rolling_pin", {
+    description = S("Iron Rolling Pin"),
+    inventory_image = "italian_food_iron_rolling_pin.png",
+    tool_capabilities = {
+        full_punch_interval = 1.0,
+        max_drop_level = 1,
+        groupcaps = {
+            crumbly = {times = {[1] = 1.2, [2] = 0.7, [3] = 0.3}, uses = 60, maxlevel = 2},
+        },
+        damage_groups = {fleshy = 2},
+    },
+    groups = {metal_tool = 1},
+})
+minetest.register_tool("italian_food:pizza_cutter_wheel", {
+    description = S("Pizza cutter wheel"),
+    inventory_image = "italian_food_cutter_wheel.png",
+    tool_capabilities = {
+        full_punch_interval = 1.0,
+        max_drop_level = 1,
+        groupcaps = {
+            crumbly = {times = {[1] = 1.2, [2] = 0.7, [3] = 0.3}, uses = 90, maxlevel = 3},
+        },
+        damage_groups = {fleshy = 5},
+    },
+    groups = {metal_tool = 1},
 })
 
 
@@ -477,9 +523,9 @@ minetest.register_node("italian_food:cheese_rack", {
 
 -- potion idea
 mcl_potions.register_potion({
-   name = "sugar_coffe",
-   _id_override = "italian_food:sugar_coffe", -- only change
-   desc_suffix = S("of Sugar Coffe"),
+   name = "sugar_coffee",
+   _id_override = "italian_food:sugar_coffee",
+   desc_suffix = S("of Sugar Coffee"),
    _tt = nil,
    _longdesc = S("Increases walking, placing and digging speed and jump boost."),
    color = "#531B00",
@@ -491,43 +537,9 @@ mcl_potions.register_potion({
    has_arrow = false,
 })
 
-
-
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- music parappa rapa papara 
+mcl_jukebox.register_record("tarantella", "Unknown", "tarantella", "mcl_jukebox_record_tarantella.png", "tarantella")
+minetest.register_alias("mcl_jukebox:record_tarantella", "mcl_jukebox:record_tarantella")
 
 
 
