@@ -9,7 +9,7 @@ Features:
 
 * Crafting: Use real recipes to prepare complex dishes
 
-* Tools: Rolling pin
+* Tools: Wood and Iron Rolling pin and a Pizza Cutter Wheel
 
 * Potions: Coffee-based potion with speed, jump, and dig boosts
 
@@ -20,4 +20,5 @@ Features:
 * Soundtrack: A new soundtrack named "Tarantella" (Public Domain)
 
 Perfect for survival players who love farming, cooking, or adding cultural flavor to their game.
+
 
