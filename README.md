@@ -16,5 +16,8 @@ Features:
 * Achievements: Earn rewards for eating Italian specialties
 
 * Structures: Pizzeria structure with loot
+  
+* Soundtrack: A new soundtrack named "Tarantella" (Public Domain)
 
 Perfect for survival players who love farming, cooking, or adding cultural flavor to their game.
+
