@@ -17,8 +17,6 @@ Features:
 
 * Structures: Pizzeria structure with loot
   
-* Soundtrack: A new soundtrack named "Tarantella" (Public Domain)
+* Soundtrack: A new music disc named "Tarantella" (Public Domain)
 
 Perfect for survival players who love farming, cooking, or adding cultural flavor to their game.
-
-
