@@ -46,7 +46,22 @@ minetest.register_craft({
         {"", "", ""}, 
     },
 })
-
+minetest.register_craft({
+	output = "italian_food:tomato_sauce_bruschetta",
+	recipe = {
+        {"", "italian_food:tomato_sauce", ""}, 
+        {"", "italian_food:bruschetta", ""}, 
+        {"", "", ""}, 
+    },
+})
+minetest.register_craft({
+	output = "italian_food:pesto_bruschetta",
+	recipe = {
+        {"", "italian_food:pesto_sauce", ""}, 
+        {"", "italian_food:bruschetta", ""}, 
+        {"", "", ""}, 
+    },
+})
 minetest.register_craft({
     output = "italian_food:tiramisu",
     recipe = {
@@ -77,7 +92,7 @@ minetest.register_craft({
     output = "italian_food:pesto_sauce",
     recipe = {
         {"","italian_food:basil", ""},
-        {"", "mcl_potions:water", ""},      
+        {"", "mcl_potions:glass_bottle", ""},      
         {"", "", ""},
     },
 })
@@ -85,7 +100,15 @@ minetest.register_craft({
     output = "italian_food:sunflowerolio",
     recipe = {
         {"","mcl_flowers:sunflower", ""}, 
-        {"", "mcl_potions:water", ""},     
+        {"", "mcl_potions:glass_bottle", ""},     
+        {"", "", ""},
+    },
+})
+minetest.register_craft({
+    output = "italian_food:olive_oil",
+    recipe = {
+        {"","italian_food:olive", ""}, 
+        {"", "mcl_potions:glass_bottle", ""},     
         {"", "", ""},
     },
 })
@@ -93,7 +116,7 @@ minetest.register_craft({
     output = "italian_food:coffee",
     recipe = {
         {"","mcl_cocoas:cocoa_beans", ""},
-        {"", "mcl_potions:water", ""},      
+        {"", "mcl_potions:glass_bottle", ""},      
         {"", "", ""},
     },
 })
@@ -203,3 +226,40 @@ minetest.register_craft({
         {"", "", "mcl_core:stick"},
     },
 })
+
+--olive wood stuff
+	minetest.register_craft({
+		output = "italian_food:olivewood 4",
+		recipe = {{"italian_food:olivetree"}},
+	})
+
+	minetest.register_craft({
+		output = "italian_food:olivewood 4",
+		recipe = {{"italian_food:stripped_olivetree"}},
+	})
+
+	minetest.register_craft({
+		output = "italian_food:olivewood 3",
+		recipe = {{"italian_food:olivetree_bark"}},
+	})
+
+	minetest.register_craft({
+		output = "italian_food:olivewood 3",
+		recipe = {{"italian_food:stripped_olivetree_bark"}},
+	})
+
+	minetest.register_craft({
+		output = "mcl_stairs:slab_olivewood 6",
+		recipe = {
+			{"italian_food:olivewood", "italian_food:olivewood", "italian_food:olivewood"},
+		}
+	})
+
+	minetest.register_craft({
+		output = "mcl_stairs:stair_olivewood 4",
+		recipe = {
+			{"italian_food:olivewood", "", ""},
+			{"italian_food:olivewood", "italian_food:olivewood", ""},
+			{"italian_food:olivewood", "italian_food:olivewood", "italian_food:olivewood"},
+		}
+	})
