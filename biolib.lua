@@ -1,7 +1,3 @@
-
--- This library will override itself, but might end up in its own dependency
--- for now every of my mods will just have a copy of it in there.
-
 biolib = {}
 
 -- Debugging functions ---------------------------------------------------------

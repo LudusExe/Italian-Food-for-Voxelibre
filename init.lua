@@ -77,6 +77,7 @@ register_food_item("italian_food:cone", S("Ice Cream Cone"), "italian_food_cone.
 register_food_item("italian_food:panettone", S("Panettone"), "italian_food_panettone.png", 7, 8)
 register_food_item("italian_food:pandoro", S("Pandoro"), "italian_food_pandoro.png", 7, 8)
 register_food_item("italian_food:coffee", S("Coffee"), "italian_food_coffee.png", 7.5,8)
+register_food_item("italian_food:coffee_roasted_bean", S("Roasted Coffee Bean"), "italian_food_roasted_coffee_bean.png", 3,4)
 register_food_item("italian_food:sunflowerolio",S("Sunflower Oil"), "italian_food_sunfloweroil.png", 5, 3)
 register_food_item("italian_food:olive_oil",S("Olive Oil"), "italian_food_olive_oil.png", 7, 4)
 register_food_item("italian_food:pork_jowl",S("Pork Jowl"), "italian_food_pork_jowl.png", 5, 3)

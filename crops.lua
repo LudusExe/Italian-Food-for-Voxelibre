@@ -138,6 +138,7 @@ mcl_farming:add_plant(
     35
 )
 
+----------------------------------------Tomato
 minetest.register_craftitem("italian_food:tomato_plant_seeds", {
     description = S("Tomato Seeds"),
     _tt_help = S("Grows on farmland"),
@@ -263,5 +264,137 @@ mcl_farming:add_plant(
         "italian_food:tomato_plant_7",
     },
     5.8020,
+    35
+)
+
+----------------------------------Coffee Plant
+local planton = {
+    "mcl_core:dirt_with_grass",
+    "mcl_core:dirt",
+    "mcl_core:podzol",
+    "mcl_core:coarse_dirt",
+    "mcl_farming:soil",
+    "mcl_farming:soil_wet",
+    "mcl_moss:moss"
+}
+
+for i = 0, 3 do
+    local texture = "italian_food_coffee_bush_" .. i .. ".png"
+    local node_name = "italian_food:coffee_bush_" .. i
+
+    local groups = {
+        coffee_bush = 1,
+        dig_immediate = 3,
+        not_in_creative_inventory = 1,
+        plant = 1,
+        attached_node = 1,
+        dig_by_water = 1,
+        destroy_by_lava_flow = 1,
+        dig_by_piston = 1,
+        flammable = 3,
+        fire_encouragement = 60,
+        fire_flammability = 20,
+        compostability = 30
+    }
+
+    local beans_to_drop = (i >= 2) and {i - 1, i} or nil
+
+    local function do_bean_drop(pos)
+        if not beans_to_drop then return false end
+
+        for _ = 1, beans_to_drop[math.random(2)] do
+            minetest.add_item(pos, "italian_food:coffee_bean")
+        end
+        minetest.swap_node(pos, {name = "italian_food:coffee_bush_1"})
+        return true
+    end
+
+    local on_bonemealing = nil
+    if i ~= 3 then
+        on_bonemealing = function(_, _, pointed_thing)
+            local pos = pointed_thing.under
+            local node = minetest.get_node(pos)
+            return mcl_farming:grow_plant("plant_coffee_bush", pos, node, 1, true)
+        end
+    else
+        on_bonemealing = function(_, _, pointed_thing)
+            do_bean_drop(pointed_thing.under)
+        end
+    end
+
+    minetest.register_node(node_name, {
+        drawtype = "plantlike",
+        tiles = {texture},
+        description = S("Coffee Bush (Stage @1)", i),
+        paramtype = "light",
+        sunlight_propagates = true,
+        walkable = false,
+        drop = beans_to_drop and {
+            max_items = 1,
+            items = {
+                {items = {"italian_food:coffee_bean " .. beans_to_drop[1]}, rarity = 2},
+                {items = {"italian_food:coffee_bean " .. beans_to_drop[2]}}
+            }
+        } or "",
+        selection_box = {
+            type = "fixed",
+            fixed = {-6/16, -0.5, -6/16, 6/16, (-0.30 + (i * 0.25)), 6/16},
+        },
+        inventory_image = texture,
+        wield_image = texture,
+        groups = groups,
+        sounds = mcl_sounds.node_sound_leaves_defaults(),
+        _mcl_blast_resistance = 0,
+        _mcl_hardness = 0,
+        _on_bone_meal = on_bonemealing,
+
+        on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
+            local pn = clicker:get_player_name()
+            if clicker:is_player() and minetest.is_protected(pos, pn) then
+                minetest.record_protection_violation(pos, pn)
+                return itemstack
+            end
+
+            if do_bean_drop(pos) then return itemstack end
+
+            if mcl_bone_meal and clicker:get_wielded_item():get_name() == "mcl_bone_meal:bone_meal" then
+                return mcl_bone_meal.use_bone_meal(itemstack, clicker, pointed_thing)
+            end
+            return itemstack
+        end,
+    })
+end
+
+minetest.register_craftitem("italian_food:coffee_bean", {
+    description = S("Coffee Bean"),
+    inventory_image = "italian_food_coffee_bean.png",
+    _mcl_saturation = 0.3,
+    groups = {food = 2, eatable = 1, compostability = 30},
+    on_secondary_use = minetest.item_eat(1),
+    on_place = function(itemstack, placer, pointed_thing)
+        local pn = placer:get_player_name()
+        if placer:is_player() and minetest.is_protected(pointed_thing.above, pn or "") then
+            minetest.record_protection_violation(pointed_thing.above, pn)
+            return itemstack
+        end
+        if pointed_thing.type == "node"
+                and table.indexof(planton, minetest.get_node(pointed_thing.under).name) ~= -1
+                and pointed_thing.above.y > pointed_thing.under.y
+                and minetest.get_node(pointed_thing.above).name == "air" then
+            minetest.set_node(pointed_thing.above, {name = "italian_food:coffee_bush_0"})
+            if not minetest.is_creative_enabled(pn) then
+                itemstack:take_item()
+            end
+            return itemstack
+        end
+        return minetest.do_item_eat(1, nil, itemstack, placer, pointed_thing)
+    end,
+})
+
+mcl_farming:add_plant(
+    "plant_coffee_bush",
+    "italian_food:coffee_bush_3",
+    {"italian_food:coffee_bush_0", "italian_food:coffee_bush_1", "italian_food:coffee_bush_2"},
+    8,
     35
 )
