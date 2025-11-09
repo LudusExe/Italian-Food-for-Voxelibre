@@ -115,7 +115,7 @@ minetest.register_craft({
 minetest.register_craft({
     output = "italian_food:coffee",
     recipe = {
-        {"","mcl_cocoas:cocoa_beans", ""},
+        {"","italian_food:coffee_roasted_bean", ""},
         {"", "mcl_potions:glass_bottle", ""},      
         {"", "", ""},
     },
@@ -135,6 +135,11 @@ minetest.register_craft({
 	replacements = {
 		{"mcl_mobitems:milk_bucket", "mcl_buckets:bucket_empty"},
 	},
+})
+minetest.register_craft({
+	type = "cooking",
+	output = "italian_food:coffee_roasted_bean",                                
+	recipe = "italian_food:coffee_bean",
 })
 minetest.register_craft({
     output = "italian_food:ice_cream",
@@ -226,7 +231,14 @@ minetest.register_craft({
         {"", "", "mcl_core:stick"},
     },
 })
-
+minetest.register_craft({
+    output = "italian_food:coffee_sack",
+    recipe = {
+        {"", "mcl_mobitems:string", ""},
+        {"italian_food:coffee_roasted_bean", "italian_food:coffee_roasted_bean", "italian_food:coffee_roasted_bean"},
+        {"italian_food:coffee_roasted_bean", "italian_food:coffee_roasted_bean", "italian_food:coffee_roasted_bean"},
+    }
+})
 --olive wood stuff
 	minetest.register_craft({
 		output = "italian_food:olivewood 4",

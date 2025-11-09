@@ -287,6 +287,28 @@ minetest.register_node("italian_food:cheese_rack", {
 })
 
 
+minetest.register_node("italian_food:coffee_sack", {
+    description = "Coffee Sack",
+    tiles = {
+        "italian_food_coffee_sack_top.png",
+        "italian_food_coffee_sack_bottom.png",
+        "italian_food_coffee_sack_side.png"
+    },
+    groups = {
+        choppy = 2,
+        oddly_breakable_by_hand = 2,
+        flammable = 3,
+        falling_node = 1,
+    },
+    sounds = mcl_sounds.node_sound_wood_defaults(),
+    paramtype2 = "facedir",
+    is_ground_content = false,
+})
+
+
+
+
+
 -- potion idea
 mcl_potions.register_potion({
    name = "sugar_coffee",

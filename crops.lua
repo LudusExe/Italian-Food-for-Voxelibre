@@ -395,6 +395,6 @@ mcl_farming:add_plant(
     "plant_coffee_bush",
     "italian_food:coffee_bush_3",
     {"italian_food:coffee_bush_0", "italian_food:coffee_bush_1", "italian_food:coffee_bush_2"},
-    8,
+    15,
     35
 )

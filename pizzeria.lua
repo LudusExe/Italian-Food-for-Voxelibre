@@ -29,7 +29,7 @@ mcl_structures.register_structure("pizzeria",{
 				{ itemstring = "italian_food:sheep_milk_bucket", weight = 3, amount_min = 1, amount_max = 2 },
 				{ itemstring = "mcl_core:iron_ingot", weight = 5, amount_min = 1, amount_max = 5 },
 				{ itemstring = "mcl_jukebox:record_tarantella", weight = 1, amount_min = 1, amount_max = 1 },
-				{ itemstring = "mcl_tools:sword_stone", weight = 10, },
+				{ itemstring = "italian_food:coffee_bean", weight = 10, },
 				{ itemstring = "italian_food:rolling_pin", weight = 10, },
 				{ itemstring = "mcl_tools:axe_iron", weight = 10, },
 				{ itemstring = "mcl_torches:torch", weight = 10, amount_min = 3, amount_max=8 },
