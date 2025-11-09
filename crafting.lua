@@ -50,7 +50,7 @@ minetest.register_craft({
 	output = "italian_food:tomato_sauce_bruschetta",
 	recipe = {
         {"", "italian_food:tomato_sauce", ""}, 
-        {"", "italian_food:bruschetta", ""}, 
+        {"","mcl_farming:bread", ""}, 
         {"", "", ""}, 
     },
 })
@@ -58,14 +58,14 @@ minetest.register_craft({
 	output = "italian_food:pesto_bruschetta",
 	recipe = {
         {"", "italian_food:pesto_sauce", ""}, 
-        {"", "italian_food:bruschetta", ""}, 
+        {"", "mcl_farming:bread", ""}, 
         {"", "", ""}, 
     },
 })
 minetest.register_craft({
     output = "italian_food:tiramisu",
     recipe = {
-        {"mcl_cocoas:cocoa_beans", "mcl_core:sugar", "mcl_cocoas:cocoa_beans"},
+        {"italian_food:coffee_roasted_bean", "mcl_core:sugar", "italian_food:coffee_roasted_bean"},
 		{"italian_food:coffee", "mcl_throwing:egg", "italian_food:coffee"},      
         {"", "", ""},
     },
@@ -84,7 +84,7 @@ minetest.register_craft({
     output = "italian_food:tomato_sauce",
     recipe = {
         {"","italian_food:tomato", ""},
-        {"", "mcl_potions:water", ""},      
+        {"", "mcl_potions:glass_bottle", ""},      
         {"", "", ""},
     },
 })
@@ -133,7 +133,7 @@ minetest.register_craft({
 	output = "italian_food:sheep_cheese",                                
 	recipe = "italian_food:sheep_milk_bucket",
 	replacements = {
-		{"mcl_mobitems:milk_bucket", "mcl_buckets:bucket_empty"},
+		{"mcl_mobitems:sheep_milk_bucket", "mcl_buckets:bucket_empty"},
 	},
 })
 minetest.register_craft({
@@ -274,4 +274,5 @@ minetest.register_craft({
 			{"italian_food:olivewood", "italian_food:olivewood", ""},
 			{"italian_food:olivewood", "italian_food:olivewood", "italian_food:olivewood"},
 		}
+
 	})
