@@ -1,4 +1,4 @@
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:dough",
     recipe = {
         {"", "mcl_farming:wheat_item", ""}, 
@@ -6,7 +6,7 @@ minetest.register_craft({
         {"", "mcl_farming:wheat_item", ""}, 
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:pizza",
     recipe = {
         {"", "italian_food:mozzarella", ""}, 
@@ -14,7 +14,7 @@ minetest.register_craft({
         {"italian_food:dough", "italian_food:dough", "italian_food:dough"}, 
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:lasagna",
     recipe = {
         {"italian_food:dough", "italian_food:dough", "italian_food:dough"}, 
@@ -22,7 +22,7 @@ minetest.register_craft({
         {"italian_food:dough", "italian_food:dough", "italian_food:dough"}, 
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:mushroom_pizza",
     recipe = {
         {"", "mcl_mushrooms:mushroom_brown", ""},   
@@ -30,7 +30,7 @@ minetest.register_craft({
         {"", "", ""}, 
     },
 })
-minetest.register_craft({
+core.register_craft({
 	output = "italian_food:spaghetti",
 	recipe = {
         {"", "italian_food:tomato_sauce", ""}, 
@@ -38,7 +38,7 @@ minetest.register_craft({
         {"", "", ""}, 
     },
 })
-minetest.register_craft({
+core.register_craft({
 	output = "italian_food:bruschetta",
 	recipe = {
         {"", "italian_food:tomato", ""}, 
@@ -46,32 +46,32 @@ minetest.register_craft({
         {"", "", ""}, 
     },
 })
-minetest.register_craft({
+core.register_craft({
 	output = "italian_food:tomato_sauce_bruschetta",
 	recipe = {
         {"", "italian_food:tomato_sauce", ""}, 
-        {"","mcl_farming:bread", ""}, 
+        {"", "italian_food:bruschetta", ""}, 
         {"", "", ""}, 
     },
 })
-minetest.register_craft({
+core.register_craft({
 	output = "italian_food:pesto_bruschetta",
 	recipe = {
         {"", "italian_food:pesto_sauce", ""}, 
-        {"", "mcl_farming:bread", ""}, 
+        {"", "italian_food:bruschetta", ""}, 
         {"", "", ""}, 
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:tiramisu",
     recipe = {
-        {"italian_food:coffee_roasted_bean", "mcl_core:sugar", "italian_food:coffee_roasted_bean"},
+        {"mcl_cocoas:cocoa_beans", "mcl_core:sugar", "mcl_cocoas:cocoa_beans"},
 		{"italian_food:coffee", "mcl_throwing:egg", "italian_food:coffee"},      
         {"", "", ""},
     },
 })
 
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:gnocco_raw",
     recipe = {
         {"", "mcl_farming:potato_item", ""},
@@ -80,7 +80,7 @@ minetest.register_craft({
     },
 })
 
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:tomato_sauce",
     recipe = {
         {"","italian_food:tomato", ""},
@@ -88,7 +88,7 @@ minetest.register_craft({
         {"", "", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:pesto_sauce",
     recipe = {
         {"","italian_food:basil", ""},
@@ -96,7 +96,7 @@ minetest.register_craft({
         {"", "", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:sunflowerolio",
     recipe = {
         {"","mcl_flowers:sunflower", ""}, 
@@ -104,7 +104,7 @@ minetest.register_craft({
         {"", "", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:olive_oil",
     recipe = {
         {"","italian_food:olive", ""}, 
@@ -112,7 +112,7 @@ minetest.register_craft({
         {"", "", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:coffee",
     recipe = {
         {"","italian_food:coffee_roasted_bean", ""},
@@ -120,7 +120,15 @@ minetest.register_craft({
         {"", "", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
+    output = "italian_food:sugar_coffee",
+    recipe = {
+        {"","mcl_core:sugar", ""},
+        {"", "italian_food:coffee", ""},      
+        {"", "", ""},
+    },
+})
+core.register_craft({
 	type = "cooking",
 	output = "italian_food:mozzarella",                                 
 	recipe = "mcl_mobitems:milk_bucket",
@@ -128,20 +136,20 @@ minetest.register_craft({
 		{"mcl_mobitems:milk_bucket", "mcl_buckets:bucket_empty"},
 	},
 })
-minetest.register_craft({
+core.register_craft({
 	type = "cooking",
 	output = "italian_food:sheep_cheese",                                
 	recipe = "italian_food:sheep_milk_bucket",
 	replacements = {
-		{"mcl_mobitems:sheep_milk_bucket", "mcl_buckets:bucket_empty"},
+		{"mcl_mobitems:milk_bucket", "mcl_buckets:bucket_empty"},
 	},
 })
-minetest.register_craft({
+core.register_craft({
 	type = "cooking",
 	output = "italian_food:coffee_roasted_bean",                                
 	recipe = "italian_food:coffee_bean",
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:ice_cream",
     recipe = {
         {"mcl_core:sugar","mcl_core:ice", "mcl_core:sugar"},
@@ -149,7 +157,7 @@ minetest.register_craft({
         {"", "italian_food:cone", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:cone",
     recipe = {
         {"","mcl_core:sugar", ""},
@@ -157,7 +165,7 @@ minetest.register_craft({
         {"", "mcl_throwing:egg", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:pandoro",
     recipe = {
         {"","mcl_core:sugar", ""},
@@ -165,7 +173,7 @@ minetest.register_craft({
         {"", "mcl_throwing:egg", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:panettone",
     recipe = {
         {"","mcl_cocoas:cocoa_beans", ""},
@@ -173,7 +181,7 @@ minetest.register_craft({
         {"", "mcl_throwing:egg", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:raviolo_raw",
     recipe = {
         {"italian_food:dough", "italian_food:dough", "italian_food:dough"}, 
@@ -181,7 +189,7 @@ minetest.register_craft({
         {"italian_food:dough", "italian_food:dough", "italian_food:dough"}, 
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:cannoli",
     recipe = {
         {"","mcl_cocoas:cocoa_beans", ""},
@@ -189,7 +197,7 @@ minetest.register_craft({
         {"", "mcl_throwing:egg", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:diamond_tomato",
     recipe = {
         {"mcl_core:diamondblock","mcl_core:diamondblock", "mcl_core:diamondblock"},
@@ -197,7 +205,7 @@ minetest.register_craft({
         {"mcl_core:diamondblock", "mcl_core:diamondblock", "mcl_core:diamondblock"},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:diamond_basil",
     recipe = {
         {"mcl_core:diamondblock","mcl_core:diamondblock", "mcl_core:diamondblock"},
@@ -207,7 +215,7 @@ minetest.register_craft({
 })
 
 -- non-food items
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:rolling_pin",
     recipe = {
         {"", "mcl_core:stick", ""},
@@ -215,7 +223,7 @@ minetest.register_craft({
         {"", "mcl_core:stick", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:iron_rolling_pin",
     recipe = {
         {"", "mcl_core:iron_nugget", ""},
@@ -223,7 +231,7 @@ minetest.register_craft({
         {"", "mcl_core:iron_nugget", ""},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:pizza_cutter_wheel",
     recipe = {
         {"mcl_core:iron_ingot", "", ""},
@@ -231,7 +239,7 @@ minetest.register_craft({
         {"", "", "mcl_core:stick"},
     },
 })
-minetest.register_craft({
+core.register_craft({
     output = "italian_food:coffee_sack",
     recipe = {
         {"", "mcl_mobitems:string", ""},
@@ -239,40 +247,40 @@ minetest.register_craft({
         {"italian_food:coffee_roasted_bean", "italian_food:coffee_roasted_bean", "italian_food:coffee_roasted_bean"},
     }
 })
+
 --olive wood stuff
-	minetest.register_craft({
-		output = "italian_food:olivewood 4",
-		recipe = {{"italian_food:olivetree"}},
-	})
+core.register_craft({
+	output = "italian_food:olivewood 4",
+	recipe = {{"italian_food:olivetree"}},
+})
 
-	minetest.register_craft({
-		output = "italian_food:olivewood 4",
-		recipe = {{"italian_food:stripped_olivetree"}},
-	})
+core.register_craft({
+	output = "italian_food:olivewood 4",
+	recipe = {{"italian_food:stripped_olivetree"}},
+})
 
-	minetest.register_craft({
-		output = "italian_food:olivewood 3",
-		recipe = {{"italian_food:olivetree_bark"}},
-	})
+core.register_craft({
+	output = "italian_food:olivewood 3",
+	recipe = {{"italian_food:olivetree_bark"}},
+})
 
-	minetest.register_craft({
-		output = "italian_food:olivewood 3",
-		recipe = {{"italian_food:stripped_olivetree_bark"}},
-	})
+core.register_craft({
+	output = "italian_food:olivewood 3",
+	recipe = {{"italian_food:stripped_olivetree_bark"}},
+})
 
-	minetest.register_craft({
-		output = "mcl_stairs:slab_olivewood 6",
-		recipe = {
-			{"italian_food:olivewood", "italian_food:olivewood", "italian_food:olivewood"},
-		}
-	})
+core.register_craft({
+	output = "mcl_stairs:slab_olivewood 6",
+	recipe = {
+		{"italian_food:olivewood", "italian_food:olivewood", "italian_food:olivewood"},
+	}
+})
 
-	minetest.register_craft({
-		output = "mcl_stairs:stair_olivewood 4",
-		recipe = {
-			{"italian_food:olivewood", "", ""},
-			{"italian_food:olivewood", "italian_food:olivewood", ""},
-			{"italian_food:olivewood", "italian_food:olivewood", "italian_food:olivewood"},
-		}
-
-	})
+core.register_craft({
+	output = "mcl_stairs:stair_olivewood 4",
+	recipe = {
+		{"italian_food:olivewood", "", ""},
+		{"italian_food:olivewood", "italian_food:olivewood", ""},
+		{"italian_food:olivewood", "italian_food:olivewood", "italian_food:olivewood"},
+	}
+})

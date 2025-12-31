@@ -7,3 +7,6 @@
 
 - **TheBiochemic**  
   For kindly granting permission to use biolib.lua, which plays an important role in the registration of the olive wood tree. Your contribution has been appreciated.
+
+- **repetitivestrain**  
+  For updating schematic generation to ensure compatibility with Mineclonia 0.117.0+.

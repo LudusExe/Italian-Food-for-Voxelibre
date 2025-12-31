@@ -1,51 +1,42 @@
 local S = minetest.get_translator("italian_food")
 local mod = minetest.get_modpath("italian_food")
 local mofood_longdesc = S("A delicious dish made from fresh ingredients.")
+
 italian_food = italian_food or {}
 
 function italian_food.olive_sapling_grow_action(level, sapling_name, grow_time)
-    return function(pos)
-        minetest.set_node(pos, {name = "italian_food:olivetree"})
-    end
+	return function(pos)
+		minetest.set_node(pos, {name = "italian_food:olivetree"})
+	end
 end
 
 dofile(mod .. "/biolib.lua")
 local olive_tree_init = dofile(mod .. "/olive_tree.lua")
 dofile(mod .. "/crafting.lua")
-dofile(mod .. "/pizzeria.lua")
+
+if not core.global_exists("mcl_levelgen")
+	or (not mcl_levelgen.levelgen_enabled
+	    and not mcl_levelgen.enable_ersatz) then
+	dofile(mod .. "/pizzeria.lua")
+else
+	mcl_levelgen.register_levelgen_script(mod .. "/lg_register.lua", true)
+	dofile(mod .. "/lg_register.lua")
+end
+
 dofile(mod .. "/crops.lua")
 olive_tree_init(S, mod, biolib, italian_food)
 
-potionmod = potionmod or {}
-potionmod.potions = potionmod.potions or {}
-
-function potionmod.register_potion_type(name, def)
-    potionmod.potions[name] = def
-end
-
-function potionmod.apply_effect(player, effect_name, duration, strength)
-    if effect_name == "speed" then
-        local name = player:get_player_name()
-        player:set_physics_override({speed = 1 + 0.5 * strength})
-        minetest.after(duration, function()
-            local p = minetest.get_player_by_name(name)
-            if p then
-                p:set_physics_override({speed = 1})
-            end
-        end)
-    end
-end
 
 local function register_food_item(name, description, image, saturation, eat_value)
-    minetest.register_craftitem(name, {
-        description = description,
-        _doc_items_longdesc = mofood_longdesc,
-        inventory_image = image,
-        groups = {food = 2, eatable = eat_value},
-        _mcl_saturation = saturation,
-        on_place = minetest.item_eat(eat_value),
-        on_secondary_use = minetest.item_eat(eat_value),
-    })
+	minetest.register_craftitem(name, {
+		description = description,
+		_doc_items_longdesc = mofood_longdesc,
+		inventory_image = image,
+		groups = {food = 2, eatable = eat_value},
+		_mcl_saturation = saturation,
+		on_place = minetest.item_eat(eat_value),
+		on_secondary_use = minetest.item_eat(eat_value),
+	})
 end
 
 register_food_item("italian_food:pizza", S("Pizza"), "italian_food_pizza.png", 16, 15)
@@ -63,24 +54,61 @@ register_food_item("italian_food:pesto_bruschetta", S("Pesto Sauce Bruschetta"),
 register_food_item("italian_food:canoli", S("Cannoli"), "italian_food_canoli.png", 20, 18)
 register_food_item("italian_food:mozzarella", S("Mozzarella"), "italian_food_mozzarella.png", 8.5, 9)
 register_food_item("italian_food:sheep_milk_bucket", S("Sheep Milk Bucket"), "italian_food_sheep_milk_bucket.png", 8.5, 9)
-register_food_item("italian_food:sheep_cheese", S("Sheep Cheese"), "italian_food_sheep_cheese.png", 9,8)
+register_food_item("italian_food:sheep_cheese", S("Sheep Cheese"), "italian_food_sheep_cheese.png", 9, 8)
 register_food_item("italian_food:tomato", S("Tomato"), "italian_food_tomato.png", 8.5, 9)
-register_food_item("italian_food:diamond_tomato", S("Diamond Tomato"), "italian_food_diamond_tomato.png", 75, 75) -- I know this is OP, but when in survival you have 8 blocks of diamond?
-register_food_item("italian_food:basil", S("Basil"), "italian_food_basil.png", 3,4)
-register_food_item("italian_food:diamond_basil", S("Diamond Basil"), "italian_food_diamond_basil.png", 50, 50) -- like the diamond tomato up there
-register_food_item("italian_food:olive", S("Olives"), "italian_food_olive.png", 3,4)
-register_food_item("italian_food:tomato_sauce", S("Tomato Sauce"), "italian_food_tomato_sauce.png", 7.5,8)
-register_food_item("italian_food:pesto_sauce", S("Pesto Sauce"), "italian_food_pesto_sauce.png", 7.5,8)
+register_food_item("italian_food:basil", S("Basil"), "italian_food_basil.png", 3, 4)
+register_food_item("italian_food:olive", S("Olives"), "italian_food_olive.png", 3, 4)
+register_food_item("italian_food:tomato_sauce", S("Tomato Sauce"), "italian_food_tomato_sauce.png", 7.5, 8)
+register_food_item("italian_food:pesto_sauce", S("Pesto Sauce"), "italian_food_pesto_sauce.png", 7.5, 8)
 register_food_item("italian_food:tiramisu", S("Tiramisu"), "italian_food_tiramisu.png", 12, 8)
 register_food_item("italian_food:ice_cream", S("Chocolate Ice Cream"), "italian_food_ice_cream.png", 8, 12)
 register_food_item("italian_food:cone", S("Ice Cream Cone"), "italian_food_cone.png", 4, 6)
 register_food_item("italian_food:panettone", S("Panettone"), "italian_food_panettone.png", 7, 8)
 register_food_item("italian_food:pandoro", S("Pandoro"), "italian_food_pandoro.png", 7, 8)
-register_food_item("italian_food:coffee", S("Coffee"), "italian_food_coffee.png", 7.5,8)
-register_food_item("italian_food:coffee_roasted_bean", S("Roasted Coffee Bean"), "italian_food_roasted_coffee_bean.png", 3,4)
-register_food_item("italian_food:sunflowerolio",S("Sunflower Oil"), "italian_food_sunfloweroil.png", 5, 3)
-register_food_item("italian_food:olive_oil",S("Olive Oil"), "italian_food_olive_oil.png", 7, 4)
-register_food_item("italian_food:pork_jowl",S("Pork Jowl"), "italian_food_pork_jowl.png", 5, 3)
+register_food_item("italian_food:coffee_roasted_bean", S("Roasted Coffee Bean"), "italian_food_roasted_coffee_bean.png", 3, 4)
+register_food_item("italian_food:sunflowerolio", S("Sunflower Oil"), "italian_food_sunfloweroil.png", 5, 3)
+register_food_item("italian_food:olive_oil", S("Olive Oil"), "italian_food_olive_oil.png", 7, 4)
+register_food_item("italian_food:pork_jowl", S("Pork Jowl"), "italian_food_pork_jowl.png", 5, 3)
+
+-- coffee has special effects
+minetest.register_craftitem("italian_food:coffee", {
+	description = S("Coffee"),
+	inventory_image = "italian_food_coffee.png",
+	groups = {food = 7, eatable = 8},
+	_mcl_saturation = 2.4,
+	on_place = function(itemstack, user, pointed_thing)
+		if user and user:is_player() then
+			mcl_potions.give_effect_by_level("swiftness", user, 1, 16, false)
+		end
+		return minetest.do_item_eat(8, nil, itemstack, user, pointed_thing)
+	end,
+	on_secondary_use = function(itemstack, user, pointed_thing)
+		if user and user:is_player() then
+			mcl_potions.give_effect_by_level("swiftness", user, 1, 16, false)
+		end
+		return minetest.do_item_eat(8, nil, itemstack, user, pointed_thing)
+	end,
+})
+minetest.register_craftitem("italian_food:sugar_coffee", {
+	description = S("Sugar Coffee"),
+	inventory_image = "italian_food_sugar_coffee.png",
+	groups = {food = 7, eatable = 8},
+	_mcl_saturation = 2.4,
+	on_place = function(itemstack, user, pointed_thing)
+		if user and user:is_player() then
+			mcl_potions.give_effect_by_level("swiftness", user, 1, 16, false)
+			mcl_potions.give_effect_by_level("haste", user, 1, 16, false)
+		end
+		return minetest.do_item_eat(8, nil, itemstack, user, pointed_thing)
+	end,
+	on_secondary_use = function(itemstack, user, pointed_thing)
+		if user and user:is_player() then
+			mcl_potions.give_effect_by_level("swiftness", user, 1, 16, false)
+			mcl_potions.give_effect_by_level("haste", user, 1, 16, false)
+		end
+		return minetest.do_item_eat(8, nil, itemstack, user, pointed_thing)
+	end,
+})
 
 --achievements
 awards.register_achievement("italian_food:pizza_eating", {
@@ -305,29 +333,6 @@ minetest.register_node("italian_food:coffee_sack", {
     is_ground_content = false,
 })
 
-
-
-
-
--- potion idea
-mcl_potions.register_potion({
-   name = "sugar_coffee",
-   _id_override = "italian_food:sugar_coffee",
-   desc_suffix = S("of Sugar Coffee"),
-   _tt = nil,
-   _longdesc = S("Increases walking, placing and digging speed and jump boost."),
-   color = "#531B00",
-   _effect_list = {
-      swiftness = {},
-        haste = {},
-        leaping = {},
-   },
-   has_arrow = false,
-})
-
 -- music parappa rapa papara 
 mcl_jukebox.register_record("tarantella", "Unknown", "tarantella", "mcl_jukebox_record_tarantella.png", "tarantella")
 mcl_jukebox.register_record("tarantella_b", "Unknown", "b", "mcl_jukebox_record_benni.png", "b")
-
-
--- Hey doesn't tiramisu also use coffee and eggs? >;p         Inspired by a real dessert and a caffeine-fueled coding session!

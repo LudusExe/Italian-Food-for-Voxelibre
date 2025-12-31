@@ -264,7 +264,19 @@ end
 -- tt_help is the tooltip for the sapling
 -- texture is the texture used for the sapling
 -- selbox defines the selection box for the sapling
-function biolib.register_sapling(nodename, description, longdesc, tt_help, texture, selbox)
+function biolib.register_sapling(subname, description, longdesc, tt_help, texture, selbox)
+	local mod = minetest.get_current_modname()
+
+	-- FIX: evita doppio prefisso se subname contiene già ":"
+	local nodename = subname
+	if not subname:find(":") then
+		nodename = mod .. ":" .. subname
+	end
+
+	if not tt_help then
+		tt_help = S("Needs soil and light to grow")
+	end
+
 	minetest.register_node(nodename, {
 		description = description,
 		_tt_help = tt_help,
@@ -291,17 +303,27 @@ function biolib.register_sapling(nodename, description, longdesc, tt_help, textu
 		},
 		sounds = mcl_sounds.node_sound_leaves_defaults(),
 		on_construct = function(pos)
-			local meta = minetest.get_meta(pos)
-			meta:set_int("stage", 0)
+			minetest.get_meta(pos):set_int("stage", 0)
 		end,
 		on_place = mcl_util.generate_on_place_plant_function(function(pos, node)
-			local node_below = minetest.get_node_or_nil({x=pos.x,y=pos.y-1,z=pos.z})
-			if not node_below then return false end
-			local nn = node_below.name
+			local below = { x = pos.x, y = pos.y - 1, z = pos.z }
+			local nb = minetest.get_node_or_nil(below)
+			if not nb then return false end
+			local nn = nb.name
+
 			return minetest.get_item_group(nn, "grass_block") == 1 or
-					nn == "mcl_core:podzol" or nn == "mcl_core:podzol_snow" or
-					nn == "mcl_core:dirt" or nn == "mcl_core:mycelium" or nn == "mcl_core:coarse_dirt"
+				nn == "mcl_core:podzol" or nn == "mcl_core:podzol_snow" or
+				nn == "mcl_core:dirt" or nn == "mcl_core:mycelium" or
+				nn == "mcl_core:coarse_dirt"
 		end),
+		_on_bone_meal = function(itemstack, placer, pointed_thing)
+			local pos = pointed_thing.under
+			local n = minetest.get_node(pos)
+			if math.random(1,100) <= 45 then
+				return mcl_core.grow_sapling(pos, n)
+			end
+		end,
+
 		node_placement_prediction = "",
 		_mcl_blast_resistance = 0,
 		_mcl_hardness = 0,
